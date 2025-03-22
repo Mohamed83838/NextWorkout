@@ -52,3 +52,45 @@
 	border-radius: 10px;
 	border: 0;
 }
+
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.dialog-content {
+    background-color: #1e1e1e; /* Darker dialog background */
+    position: absolute; /* Positioning for centering */
+    top: 50%; /* 50% from the top */
+    left: 50%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center the dialog */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4081; /* Change color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}

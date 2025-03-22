@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=hello, initial-scale=1.0">
-    <title>Next Workout</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div id="base-layout">
-        <div id="container">
-            <div id="header">
-                <span id="timer">00:00</span>
-            </div>
-            <div id="controls">
-                <label for="time">Time</label>
-                <input type="number" name="time" id="time" placeholder="Write time in seconds">
-            </div>
-            <div id="start-layout">
-                <button onclick="start()" id="start-btn">Start</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=hello, initial-scale=1.0">
+        <title>Next Workout</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="base-layout">
+            <div id="container">
+                <div id="header">
+                    <span id="timer">00:00</span>
+                </div>
+                <button id="openDialog">Change timer</button>
+                <div id="start-layout">
+                    <button onclick="start()" id="start-btn">Start</button>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <!-- SETTINGS DIALOG -->
+        <div id="dialog" class="dialog">
+            <div class="dialog-content">
+                
+                <div id="controls">
+                    <label for="time">Time</label>
+                    <input type="number" name="time" id="time" placeholder="Write time in seconds" onchange="updateTimer()">
+                </div>
+                <span class="close" id="closeDialog">&times;</span>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
