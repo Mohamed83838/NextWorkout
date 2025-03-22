@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=hello, initial-scale=1.0">
     <title>Next Workout</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
+    <div id="base-layout">
+        <div id="container">
+            <div id="header">
+                <span id="timer">00:00</span>
+            </div>
+            <div id="controls">
+                <label for="time">Time</label>
+                <input type="number" name="time" placeholder="Write time in seconds">
+            </div>
+            <div id="start-layout">
+                <button onclick="start()" id="start-btn">Start</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
