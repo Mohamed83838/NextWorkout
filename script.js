@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const MODE_NOT_STARTED = "notstarted";
 const MODE_STARTED = "started";
 const MODE_CONTINUED = "continued";
