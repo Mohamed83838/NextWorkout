@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Geist'; /* Name you want to use for the font */
+    src: url('../fonts/geist-regular.woff2') format('woff2'); /* Adjust the path and format */
+    font-weight: normal; /* Specify the font weight */
+    font-style: normal; /* Specify the font style */
+}
+
+@font-face {
+    font-family: 'Geist Black'; /* Name you want to use for the font */
+    src: url('../fonts/geist-black.woff2') format('woff2'); /* Adjust the path and format */
+    font-weight: normal; /* Specify the font weight */
+    font-style: normal; /* Specify the font style */
+}

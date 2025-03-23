@@ -1,3 +1,4 @@
+////////////////// GLOBAL VARIABLES
 const MODE_NOT_STARTED = "notstarted";
 const MODE_STARTED = "started";
 
@@ -8,37 +9,36 @@ let interval;
 const timer = document.querySelector("#timer");
 const time = document.querySelector("#time");
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dialog = document.getElementById('dialog');
-    const openDialogButton = document.getElementById('openDialog');
-    const closeDialogButton = document.getElementById('closeDialog');
+const dialog = document.getElementById('dialog');
+const openDialogButton = document.getElementById('openDialog');
+const closeDialogButton = document.getElementById('closeDialog');
+////////////////// ////////////////////
 
-    // Open the dialog
-    openDialogButton.onclick = function() {
-        dialog.style.display = 'block';
-    }
+////////////////// SETTINGS DIALOG
+// Open the dialog
+openDialogButton.onclick = function() {
+	dialog.style.display = 'block';
+}
 
-    // Close the dialog
-    closeDialogButton.onclick = function() {
-        dialog.style.display = 'none';
-    }
+// Close the dialog
+closeDialogButton.onclick = function() {
+	dialog.style.display = 'none';
+}
 
-    // Close the dialog when clicking outside of it
-    window.onclick = function(event) {
-        if (event.target === dialog) {
-            dialog.style.display = 'none';
-        }
-    }
-});
-
+// Close the dialog when clicking outside of it
+window.onclick = function(event) {
+	if (event.target === dialog) {
+		dialog.style.display = 'none';
+	}
+}
 
 function updateTimer() {
 	timer.innerHTML = formatTime(Number(time.value))
 }
+////////////////// ////////////////////
 
-
-
-
+////////////////// TIMER LOGIQUE
+// format time from seconds to numerique clock style (e.g. 00:00)
 function formatTime(time) {
 	mins = Math.floor(time / 60);
 	secs = time - (mins * 60);
@@ -55,7 +55,7 @@ function beep() {
 	const audio = new Audio('media/beep.mp3');
 	audio.play();
 }
-
+// This function is the base of the project, yet, it is subject to change a lot
 function start() {
 	const start = document.querySelector("#start-btn");
 
@@ -88,3 +88,4 @@ function start() {
 		clearInterval(interval);
 	}
 }
+////////////////// ////////////////// 
