@@ -1,13 +1,36 @@
 function start() {
-	console.log("start")
-	timer = document.querySelector("#timer")
-	time = Number(document.querySelector("#time").value)
-	x = time
-	x = setInterval(function() {
-		if (x > 0){
-			x -= 1
-			timer.innerHTML = x
+
+	const timer = document.querySelector("#timer");
+	const time = document.querySelector("#time");
+
+	beep();
+
+	currentTime = Number(time.value) + 1;
+	interval = setInterval(function(){
+		if (currentTime > 0) {
+			currentTime -= 1;
+			timer.innerHTML = formatTime(currentTime);
+		} else {
+			clearInterval(interval);
+			beep();
+
 		}
 	}, 1000);
-	
+}
+
+function formatTime(time) {
+	mins = Math.floor(time / 60);
+	secs = time - (mins * 60);
+	if (secs < 10) {
+		secs = "0" + secs
+	}
+	if (mins < 10) {
+		mins = "0" + mins
+	}
+	return mins + ":" + secs;
+}
+
+function beep() {
+    const audio = new Audio('media/beep.mp3'); 
+    audio.play();
 }
