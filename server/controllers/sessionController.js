@@ -7,12 +7,13 @@ const secretKey = 'your-secret-key';
 export const  generateToken = async(req,res) => {
     const user = req.body;
     const payload = {
-        userId: user.id,  // Add user info (you can add more data if necessary)
+        id: user.id,  // Add user info (you can add more data if necessary)
         username: user.username,
+        email: user.email,
     };
 
     const token = jwt.sign(payload, secretKey, {
-        expiresIn: '5min', // Token expiration (optional)
+        expiresIn: '100min', // Token expiration (optional)
     });
 
     res.status(200).json({ token });
@@ -21,10 +22,10 @@ export const  generateToken = async(req,res) => {
 export const verifyToken = async(req,res) => {
     const data = req.body;
     try {
-        const decoded = jwt.verify(data.token, secretKey);
-        res.status(200).json({ decoded });
+        const session = jwt.verify(data.token, secretKey);
+        res.status(200).json({ session,"result":"valid" });
     } catch (error) {
         console.error(error);
-        res.status(401).json({ error: 'Unauthorized' });
+        res.status(401).json({ error: 'Unauthorized',result:"invalid" });
     }
 }
