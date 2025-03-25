@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+ .clickable-div {
+  position: relative;
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+}
+    </style>
+</head>
+<body>
+ 
+   <div class="clickable-div" onclick="toggleDropdown(this)">
+  Click me to show dropdown
+  <div class="dropdown-content">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+  </div>
+</div>
+
+<div class="clickable-div" onclick="toggleDropdown(this)">
+  Another clickable div
+  <div class="dropdown-content">
+    <a href="#">Choice A</a>
+    <a href="#">Choice B</a>
+    <a href="#">Choice C</a>
+  </div>
+</div>
+    <script type="text/javascript">
+        workouts = [{
+    name: "Morning routine",
+    plan; workoutPlan
+}, {
+    name: "Night routine",
+    plan; workoutPlan1
+}]
+function toggleDropdown(element) {
+  // Close all other dropdowns first
+  const allDropdowns = document.querySelectorAll('.dropdown-content');
+  allDropdowns.forEach(dropdown => {
+    if (dropdown !== element.querySelector('.dropdown-content')) {
+      dropdown.classList.remove('show');
+    }
+  });
+  
+  // Toggle the clicked dropdown
+  const dropdown = element.querySelector('.dropdown-content');
+  dropdown.classList.toggle('show');
+}
+
+// Close dropdowns when clicking elsewhere
+window.onclick = function(event) {
+  if (!event.target.matches('.clickable-div')) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+  }
+}
+    </script>
+</body>
+</html>

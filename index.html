@@ -26,23 +26,51 @@
 				</div>
 			</div>
 			<div id="main">
-				
+				<div class="spacer"></div>
 				<!-- <hr style="width: calc(100vw - 1px);"> -->
 				<div id="timer-layout">
 					<span id="timer">00:00</span>
 				</div>
 				<div id="controls">
 					<div id="titles">
-					<span id="workout-title"><span class="info">Workout:</span> Warm up for an ABS workout</span>
-					<span id="current-timer-title"><span class="info">Current:</span> Jumping Jacks</span>
-				</div>
+						<!-- <span id="workout-title"><span class="info">Workout:</span> Warm up for an ABS workout</span> -->
+						<div class="next-layout">
+							<span class="info dude">Next:</span>
+							<span id="next-timer-title">Rest</span>
+						</div>
+						<div class="current-layout">
+							<span class="info glow">Now:</span>
+							<span id="current-timer-title"> Jumping Jacks</span>
+						</div>
+						
+					</div>
+					<div id="done" onclick="doneExercise()">
+						<i class="fas fa-check" style="font-size:4vw"></i>
+					</div>
 					<div id="start">
-						<i class="fas fa-play" style="font-size: 3vw"></i>
+						<i class="fas fa-play" id="icon-s" style="font-size: 8vw"></i>
 					</div>
 				</div>
 			</div>
 			
 		</div>
+		<div id="overlay" class="overlay"></div>
+		<div id="settingsDialogue" class="settings-dialogue">
+			<div class="dialogue-header">
+				<span>Settings</span>
+				<i class="fa-solid fa-xmark" id="closeSettings"></i>
+			</div>
+			<div class="dialogue-body">
+				<div class="field">
+					<label for="time">Countdown (seconds)</label>
+					<input type="number" name="time" id="time">
+				</div>
+			</div>
+			<div class="dialogue-footer">
+				<button id="saveSettings" class="btn">Save</button>
+			</div>
+		</div>
+		<script src="js/utils.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
